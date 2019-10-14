@@ -35,6 +35,8 @@ public class PublicConstant {
 
     public static final String UPDATE_SYSADMIN_INFO_ERROR  = "不能修改管理员信息!";
 
+    public static final String SMS_EMAIL = "email";
+
     public static final Integer SUCCESS_CODE = 200;
 
     public static final Integer FAIL_CODE = 500;

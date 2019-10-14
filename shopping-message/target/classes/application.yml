@@ -1,0 +1,30 @@
+server:
+  port: 7001
+  context-path: /message
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.93.128:9001/eureka/
+spring:
+  application:
+    name: message-server
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+      enabled: false
+  mail:
+    host: smtp.163.com
+    username: yushengjun2018@163.com
+    password: itmayiedu644
+    enable:  true
+    smtp:
+      auth: true
+    starttls:
+      enable: true
+      required: true
+########################################
+
+msg:
+  subject: HungKuei提示您，会员注册成功邮件。
+  text:  恭喜您的账户{},注册成功! HungKuei www.github.com/HungKuei/shopping-parent.git

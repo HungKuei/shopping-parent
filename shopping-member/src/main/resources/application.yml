@@ -7,7 +7,7 @@ eureka:
       defaultZone: http://192.168.93.128:9001/eureka/
 spring:
   application:
-    name: member
+    name: member-server
   #redis连接信息
   redis:
     host: 192.168.93.128
@@ -43,6 +43,16 @@ spring:
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
+  ##activemq连接信息
+  activemq:
+    broker-url: tcp://localhost:61616
+    in-memory: true
+    pool:
+      enabled: false
+##队列
+messages:
+   queue: messages_queue
+
 mybatis:
   configuration:
     map-underscore-to-camel-case: true

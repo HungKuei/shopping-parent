@@ -10,6 +10,7 @@
         <module name="shopping-common" />
         <module name="shopping-eureka-server" />
         <module name="shopping-member" />
+        <module name="shopping-message" />
       </profile>
     </annotationProcessing>
   </component>

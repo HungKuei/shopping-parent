@@ -63,6 +63,14 @@ public class BaseService {
     }
 
     /**
+     * 自定义响应信息
+     * @return
+     */
+    public BaseResponse error(String msg){
+        return init(ResultStatusCode.ERROR.getCode(), msg);
+    }
+
+    /**
      * 自定义失败返回结果和状态码
      * @param code
      * @param msg

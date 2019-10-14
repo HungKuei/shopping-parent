@@ -12,6 +12,7 @@
         <module>shopping-eureka-server</module>
         <module>shopping-api</module>
         <module>shopping-member</module>
+        <module>shopping-message</module>
     </modules>
     <packaging>pom</packaging>
 
