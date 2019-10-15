@@ -68,4 +68,25 @@ public class UserServiceImpl extends BaseService implements UserService {
             return error("注册失败");
         }
     }
+
+    @Override
+    public BaseResponse login(@RequestBody UserEntity userEntity) {
+        // 验证参数
+        String username = userEntity.getUsername();
+        if (StringUtils.isEmpty(username)){
+            return error("用户名不能为空");
+        }
+        String password = userEntity.getPassword();
+        if (StringUtils.isEmpty(password)){
+            return error("密码不能为空");
+        }
+        //密码校验
+
+        //生成token令牌
+
+        //存入redis缓存
+
+        //返回token
+        return null;
+    }
 }

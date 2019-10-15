@@ -10,8 +10,8 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-@Component
 @Slf4j
+@Component
 public class ConsumerDistribute {
 
     @Autowired

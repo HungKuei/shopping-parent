@@ -12,4 +12,7 @@ public interface UserService {
 
     @PostMapping("/register")
     BaseResponse register(@RequestBody UserEntity userEntity);
+
+    @PostMapping("/login")
+    BaseResponse login(@RequestBody UserEntity userEntity);
 }
