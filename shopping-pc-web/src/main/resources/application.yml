@@ -1,0 +1,11 @@
+server:
+  port: 8003
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.93.128:9001/eureka/
+spring:
+  application:
+    name: pc-web-server

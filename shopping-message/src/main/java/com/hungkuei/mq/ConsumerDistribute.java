@@ -22,7 +22,7 @@ public class ConsumerDistribute {
     @JmsListener(destination = "messages_queue")
     public void distribute(String json){
 
-        log.info("###### 消息平台接收到的消息 #####", json);
+        log.info("###### 消息平台接收到的消息:{}", json);
         if (StringUtils.isEmpty(json)){
             return;
         }

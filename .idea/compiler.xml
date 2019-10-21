@@ -11,6 +11,7 @@
         <module name="shopping-eureka-server" />
         <module name="shopping-member" />
         <module name="shopping-message" />
+        <module name="shopping-pc-web" />
       </profile>
     </annotationProcessing>
   </component>

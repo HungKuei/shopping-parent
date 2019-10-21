@@ -17,10 +17,10 @@ import org.springframework.util.StringUtils;
 @Service
 public class EmailService implements MessageAdapter {
 
-    @Value("msg.subject")
+    @Value("${msg.subject}")
     private String subject;
 
-    @Value("msg.text")
+    @Value("${msg.text}")
     private String text;
 
     @Autowired

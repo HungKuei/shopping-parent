@@ -20,4 +20,7 @@ public interface UserMapper {
     @Insert("insert into mb_user (username,password,salt,phone,email,avatar,create_time,update_time) values" +
             "(#{username},#{password},#{salt},#{phone},#{email},#{avatar},#{createTime},#{updateTime})")
     Integer insert(UserEntity userEntity);
+
+    @Select("select id,username,password,salt,phone,email,avatar,status,create_time,update_time from mb_user where username = #{username}")
+    UserEntity selectByUsername(@Param("username") String username);
 }

@@ -30,7 +30,7 @@ public class UserServiceImpl extends BaseService implements UserService {
     @Autowired
     private RegisterMailboxProducer registerMailboxProducer;
 
-    @Value("messages.queue")
+    @Value("${messages.queue}")
     private String messagesQueue;
 
     @Override
@@ -59,9 +59,9 @@ public class UserServiceImpl extends BaseService implements UserService {
         String msgJson = BaseMessage.msgJson(PublicConstant.SMS_EMAIL, userEntity.getEmail());
         log.info("####将会员注册消息发送到消息平台:{}", msgJson);
         // 创建消息队列
-        ActiveMQQueue message_queue = new ActiveMQQueue(messagesQueue);
+        ActiveMQQueue messages_queue = new ActiveMQQueue(messagesQueue);
         // 发送消息
-        registerMailboxProducer.sendMsg(message_queue, msgJson);
+        registerMailboxProducer.sendMsg(messages_queue, msgJson);
         if (userMapper.insert(userEntity) > 0) {
             return success("注册成功");
         }else{
@@ -80,8 +80,15 @@ public class UserServiceImpl extends BaseService implements UserService {
         if (StringUtils.isEmpty(password)){
             return error("密码不能为空");
         }
+        UserEntity user = userMapper.selectByUsername(username);
+        if (StringUtils.isEmpty(user)){
+            return error("用户不存在");
+        }
         //密码校验
-
+        String newPassword = MD5Util.MD5(password);
+        if (!user.getPassword().equals(newPassword)){
+            return error("账号或密码错误");
+        }
         //生成token令牌
 
         //存入redis缓存
