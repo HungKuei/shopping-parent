@@ -1,53 +1,63 @@
 package com.hungkuei.constant;
 
-public class PublicConstant {
-    public static final String FAILED  = "系统错误";
+public interface PublicConstant {
+    String FAILED  = "系统错误";
 
-    public static final String SUCCEED = "操作成功";
+    String SUCCEED = "操作成功";
 
-    public static final String UNAUTHORIZED  = "获取登录用户信息失败";
+    String UNAUTHORIZED  = "获取登录用户信息失败";
 
-    public static final String ERROR  = "操作失败";
+    String ERROR  = "操作失败";
 
-    public static final String DATA_ERROR  = "数据操作错误";
+    String DATA_ERROR  = "数据操作错误";
 
-    public static final String PARAM_ERROR  = "参数错误";
+    String PARAM_ERROR  = "参数错误";
 
-    public static final String INVALID_USERNAME_PASSWORD  = "用户名或密码错误";
+    String INVALID_USERNAME_PASSWORD  = "用户名或密码错误";
 
-    public static final String INVALID_RE_PASSWORD  = "两次输入密码不一致";
+    String INVALID_RE_PASSWORD  = "两次输入密码不一致";
 
-    public static final String INVALID_USER  = "用户不存在";
+    String INVALID_USER  = "用户不存在";
 
-    public static final String INVALID_ROLE  = "角色不存在";
+    String INVALID_ROLE  = "角色不存在";
 
-    public static final String ROLE_USER_USED  = "角色使用中，不可删除";
+    String ROLE_USER_USED  = "角色使用中，不可删除";
 
-    public static final String USER_NO_PERMITION  = "当前用户无该接口权限";
+    String USER_NO_PERMITION  = "当前用户无该接口权限";
 
-    public static final String VERIFY_PARAM_ERROR  = "校验码错误";
+    String VERIFY_PARAM_ERROR  = "校验码错误";
 
-    public static final String VERIFY_PARAM_PASS  = "校验码过期";
+    String VERIFY_PARAM_PASS  = "校验码过期";
 
-    public static final String MOBILE_ERROR  = "手机号格式错误";
+    String MOBILE_ERROR  = "手机号格式错误";
 
-    public static final String UPDATE_ROLEINFO_ERROR  = "更新角色信息失败";
+    String UPDATE_ROLEINFO_ERROR  = "更新角色信息失败";
 
-    public static final String UPDATE_SYSADMIN_INFO_ERROR  = "不能修改管理员信息!";
+    String UPDATE_SYSADMIN_INFO_ERROR  = "不能修改管理员信息!";
 
-    public static final String SMS_EMAIL = "email";
+    String SMS_EMAIL = "email";
 
-    public static final Integer SUCCESS_CODE = 200;
+    Integer SUCCESS_CODE = 200;
 
-    public static final Integer FAIL_CODE = 500;
+    Integer FAIL_CODE = 500;
 
-    public static final Integer DEFAULT_TYPE_ = 0;
+    Integer DEFAULT_TYPE_ = 0;
 
-    public static final Integer INVALID_TYPE = 1;
+    Integer INVALID_TYPE = 1;
 
-    public static final Integer VALID_TYPE = 2;
+    Integer VALID_TYPE = 2;
 
-    public static final Integer STATUS_INVALID = 0;
+    Integer STATUS_INVALID = 0;
 
-    public static final Integer STATUS_VALID = 1;
+    Integer STATUS_VALID = 1;
+
+    /**
+     * 会员token头
+     */
+    String MEMBER_TOKEN = "MEMBER_TOKEN";
+
+    /**
+     * token过期时间(90天)
+     */
+    Long MEMBER_TOKEN_TIME = (long)(60*60*24*90);
 }

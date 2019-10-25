@@ -1,19 +1,29 @@
 package com.hungkuei.base;
 
-import com.alibaba.fastjson.JSONObject;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class BaseMessage {
 
-    public static String msgJson(String interfaceType, String email){
-        JSONObject msgJson = new JSONObject();
-        JSONObject headerJson = new JSONObject();
-        headerJson.put("interfaceType",interfaceType);
-        JSONObject contentJson = new JSONObject();
-        contentJson.put("email", email);
-        msgJson.put("header", headerJson);
-        msgJson.put("content", contentJson);
-        return msgJson.toJSONString();
-    }
-
+    /**
+     * 开发者微信
+     */
+    private String ToUserName;
+    /**
+     * 发送方openid
+     */
+    private String FromUserName;
+    /**
+     * 创建时间
+     */
+    private long CreateTime;
+    /**
+     * 内容类型
+     */
+    private String MsgType;
 
 }

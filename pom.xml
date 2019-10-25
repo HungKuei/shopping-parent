@@ -14,6 +14,7 @@
         <module>shopping-member</module>
         <module>shopping-message</module>
         <module>shopping-pc-web</module>
+        <module>shopping-weixin</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -120,6 +121,14 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
         </dependency>
     </dependencies>
     <dependencyManagement>

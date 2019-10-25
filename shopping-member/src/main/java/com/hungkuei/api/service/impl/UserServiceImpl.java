@@ -1,5 +1,6 @@
 package com.hungkuei.api.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hungkuei.base.BaseMessage;
 import com.hungkuei.constant.PublicConstant;
 import com.hungkuei.entity.UserEntity;
@@ -9,6 +10,8 @@ import com.hungkuei.base.BaseResponse;
 import com.hungkuei.base.BaseService;
 import com.hungkuei.mq.RegisterMailboxProducer;
 import com.hungkuei.utils.MD5Util;
+import com.hungkuei.utils.MessageUtil;
+import com.hungkuei.utils.TokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +59,7 @@ public class UserServiceImpl extends BaseService implements UserService {
         userEntity.setSalt(UUID.randomUUID().toString());
         userEntity.setPassword(MD5Util.MD5(userEntity.getPassword()));
         // 判断邮箱或手机号是否为空，发送邮箱或短信验证
-        String msgJson = BaseMessage.msgJson(PublicConstant.SMS_EMAIL, userEntity.getEmail());
+        String msgJson = MessageUtil.msgJson(PublicConstant.SMS_EMAIL, userEntity.getEmail());
         log.info("####将会员注册消息发送到消息平台:{}", msgJson);
         // 创建消息队列
         ActiveMQQueue messages_queue = new ActiveMQQueue(messagesQueue);
@@ -90,10 +93,12 @@ public class UserServiceImpl extends BaseService implements UserService {
             return error("账号或密码错误");
         }
         //生成token令牌
-
+        String memberToken = TokenUtil.getMemberToken();
         //存入redis缓存
-
+        baseRedisService.setString(memberToken, String.valueOf(user.getId()), PublicConstant.MEMBER_TOKEN_TIME);
         //返回token
-        return null;
+        JSONObject token = new JSONObject();
+        token.put("memberToken", memberToken);
+        return success(token);
     }
 }

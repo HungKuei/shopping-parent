@@ -12,6 +12,7 @@
         <module name="shopping-member" />
         <module name="shopping-message" />
         <module name="shopping-pc-web" />
+        <module name="shopping-weixin" />
       </profile>
     </annotationProcessing>
   </component>

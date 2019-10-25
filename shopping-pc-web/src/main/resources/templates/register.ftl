@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>云EC电商系统-欢迎注册会员</title>
+<title>电商系统-欢迎注册会员</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="stylesheet" href="/view/default/css/common.css" />
@@ -20,7 +20,7 @@
 		<div class="nb">
 			<div class="logo">
 				<a href="../index.html"><img src="static/images/logo.png" alt="" /></a>
-				<span>&middot; 欢迎注册</span>
+				<span>欢迎注册</span>
 			</div>
 			<div class="right">
 				<span>我已经注册，马上</span> <a href="login.html" class="blue">登录 &gt;</a>
